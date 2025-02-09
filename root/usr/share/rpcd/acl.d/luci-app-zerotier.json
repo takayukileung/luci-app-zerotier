@@ -1,0 +1,17 @@
+{
+	"luci-app-zerotier": {
+		"description": "Grant access to ZeroTier configuration",
+		"read": {
+			"file": {
+				"/sbin/ifconfig": [ "exec" ]
+			},
+			"ubus": {
+				"service": [ "list" ]
+			},
+			"uci": [ "zerotier","zerotier-extra" ]
+		},
+		"write": {
+			"uci": [ "zerotier","zerotier-extra" ]
+		}
+	}
+}
